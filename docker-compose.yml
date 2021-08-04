@@ -1,22 +1,22 @@
-version: '3'
+version: '2'
 
 services:
   crowi:
     image: bakudankun/crowi:latest
-    links:
-      - mongo:db
-      - redis:redis
-      - elasticsearch:es
+    # links:
+    #   - mongo:db
+    #   - redis:redis
+    #   - elasticsearch:es
     ports:
-      - 80:3000
+      - 3000:3000
 
-  mongo:
+  db:
     image: mongo
 
   redis:
     image: redis:alpine
 
-  elasticsearch:
+  es:
     image: elasticsearch:2
     # プラグインのKuromojiが必要
     entrypoint:
